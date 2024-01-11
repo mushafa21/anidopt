@@ -1,5 +1,6 @@
 
 
+import 'package:anidopt/config/router/app_router.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 
@@ -15,18 +16,14 @@ class InitialRouteGuards extends AutoRouteGuard{
       print("OnBoardingGuards token ${_cacheStore.token}");
     }
     resolver.next(true);
+    if (_cacheStore.isLogin) {
+      router.push(HomeNavigationRoute());
+    } else if(!_cacheStore.first){
+      router.push(LoginRoute());
+    } else{
+      resolver.next(true);
 
-    // if (_cacheStore.token.isNotEmpty && _cacheStore.user.pin != null) {
-    //   router.push(LoginPinRoute());
-    //
-    // } else if(_cacheStore.token.isNotEmpty && _cacheStore.user.pin == null) {
-    //   router.push(CreatePinRoute());
-    // } else if(!_cacheStore.first){
-    //   router.push(LoginRoute());
-    // } else{
-    //   resolver.next(true);
-    //
-    // }
+    }
   }
 
 }

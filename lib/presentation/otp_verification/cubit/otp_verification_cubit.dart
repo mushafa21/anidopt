@@ -48,6 +48,7 @@ class OtpVerificationCubit extends Cubit<OtpVerificationState> {
       final user = await _userRepository.getUser(uid);
       if (user != null) {
         _cacheStore.user = user;
+        _cacheStore.isLogin = true;
         emit(OtpVerificationStateRegistered());
       } else {
         emit(OtpVerificationStateNotRegistered(uid));

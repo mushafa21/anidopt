@@ -56,6 +56,5 @@ class CacheStore {
   void clearCache() {
     _getStorage.erase();
     first = false;
-
   }
 }

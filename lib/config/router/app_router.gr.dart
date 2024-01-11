@@ -15,6 +15,16 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    CreatePostRoute.name: (routeData) {
+      final args = routeData.argsAs<CreatePostRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: CreatePostScreen(
+          key: args.key,
+          postType: args.postType,
+        ),
+      );
+    },
     FeedRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -22,9 +32,14 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     HomeNavigationRoute.name: (routeData) {
+      final args = routeData.argsAs<HomeNavigationRouteArgs>(
+          orElse: () => const HomeNavigationRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomeNavigationScreen(),
+        child: HomeNavigationScreen(
+          key: args.key,
+          initial: args.initial,
+        ),
       );
     },
     InformationRoute.name: (routeData) {
@@ -47,6 +62,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const MapScreen(),
       );
     },
+    OnboardingRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OnboardingScreen(),
+      );
+    },
     OtpVerificationRoute.name: (routeData) {
       final args = routeData.argsAs<OtpVerificationRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -57,10 +78,20 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    PostDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<PostDetailRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: PostDetailScreen(
+          key: args.key,
+          postModel: args.postModel,
+        ),
+      );
+    },
     ProfileRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ProfileScreen(),
+        child:  ProfileScreen(),
       );
     },
     RegisterFormRoute.name: (routeData) {
@@ -86,6 +117,44 @@ abstract class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
+/// [CreatePostScreen]
+class CreatePostRoute extends PageRouteInfo<CreatePostRouteArgs> {
+  CreatePostRoute({
+    Key? key,
+    required PostType postType,
+    List<PageRouteInfo>? children,
+  }) : super(
+          CreatePostRoute.name,
+          args: CreatePostRouteArgs(
+            key: key,
+            postType: postType,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'CreatePostRoute';
+
+  static const PageInfo<CreatePostRouteArgs> page =
+      PageInfo<CreatePostRouteArgs>(name);
+}
+
+class CreatePostRouteArgs {
+  const CreatePostRouteArgs({
+    this.key,
+    required this.postType,
+  });
+
+  final Key? key;
+
+  final PostType postType;
+
+  @override
+  String toString() {
+    return 'CreatePostRouteArgs{key: $key, postType: $postType}';
+  }
+}
+
+/// generated route for
 /// [FeedScreen]
 class FeedRoute extends PageRouteInfo<void> {
   const FeedRoute({List<PageRouteInfo>? children})
@@ -101,16 +170,40 @@ class FeedRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [HomeNavigationScreen]
-class HomeNavigationRoute extends PageRouteInfo<void> {
-  const HomeNavigationRoute({List<PageRouteInfo>? children})
-      : super(
+class HomeNavigationRoute extends PageRouteInfo<HomeNavigationRouteArgs> {
+  HomeNavigationRoute({
+    Key? key,
+    PageRouteInfo<dynamic>? initial,
+    List<PageRouteInfo>? children,
+  }) : super(
           HomeNavigationRoute.name,
+          args: HomeNavigationRouteArgs(
+            key: key,
+            initial: initial,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'HomeNavigationRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<HomeNavigationRouteArgs> page =
+      PageInfo<HomeNavigationRouteArgs>(name);
+}
+
+class HomeNavigationRouteArgs {
+  const HomeNavigationRouteArgs({
+    this.key,
+    this.initial,
+  });
+
+  final Key? key;
+
+  final PageRouteInfo<dynamic>? initial;
+
+  @override
+  String toString() {
+    return 'HomeNavigationRouteArgs{key: $key, initial: $initial}';
+  }
 }
 
 /// generated route for
@@ -170,6 +263,20 @@ class MapRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [OnboardingScreen]
+class OnboardingRoute extends PageRouteInfo<void> {
+  const OnboardingRoute({List<PageRouteInfo>? children})
+      : super(
+          OnboardingRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OnboardingRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [OtpVerificationScreen]
 class OtpVerificationRoute extends PageRouteInfo<OtpVerificationRouteArgs> {
   OtpVerificationRoute({
@@ -204,6 +311,44 @@ class OtpVerificationRouteArgs {
   @override
   String toString() {
     return 'OtpVerificationRouteArgs{key: $key, phoneNumber: $phoneNumber}';
+  }
+}
+
+/// generated route for
+/// [PostDetailScreen]
+class PostDetailRoute extends PageRouteInfo<PostDetailRouteArgs> {
+  PostDetailRoute({
+    Key? key,
+    required PostModel postModel,
+    List<PageRouteInfo>? children,
+  }) : super(
+          PostDetailRoute.name,
+          args: PostDetailRouteArgs(
+            key: key,
+            postModel: postModel,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'PostDetailRoute';
+
+  static const PageInfo<PostDetailRouteArgs> page =
+      PageInfo<PostDetailRouteArgs>(name);
+}
+
+class PostDetailRouteArgs {
+  const PostDetailRouteArgs({
+    this.key,
+    required this.postModel,
+  });
+
+  final Key? key;
+
+  final PostModel postModel;
+
+  @override
+  String toString() {
+    return 'PostDetailRouteArgs{key: $key, postModel: $postModel}';
   }
 }
 

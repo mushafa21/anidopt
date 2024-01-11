@@ -10,6 +10,12 @@ class PostModel{
   String? imageUrl;
   String? caption;
   String? type;
+  double? latitude;
+  double? longitude;
+  String? address;
+  String? contact;
+  String? name;
+  String? species;
 
   PostModel();
   factory PostModel.fromJson(Map<String, dynamic> json) =>
