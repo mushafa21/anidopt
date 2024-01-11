@@ -7,6 +7,12 @@ part 'user_model.g.dart';
 @JsonSerializable()
 class UserModel{
   String? uid;
+  String? name;
+  String? birthDate;
+  String? gender;
+  String? address;
+  double? latitude;
+  double? longitude;
 
   UserModel();
 

@@ -34,9 +34,11 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     LoginRoute.name: (routeData) {
+      final args = routeData.argsAs<LoginRouteArgs>(
+          orElse: () => const LoginRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const LoginScreen(),
+        child: LoginScreen(key: args.key),
       );
     },
     MapRoute.name: (routeData) {
@@ -46,9 +48,13 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     OtpVerificationRoute.name: (routeData) {
+      final args = routeData.argsAs<OtpVerificationRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const OtpVerificationScreen(),
+        child: OtpVerificationScreen(
+          key: args.key,
+          phoneNumber: args.phoneNumber,
+        ),
       );
     },
     ProfileRoute.name: (routeData) {
@@ -57,10 +63,23 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ProfileScreen(),
       );
     },
-    RegisterRoute.name: (routeData) {
+    RegisterFormRoute.name: (routeData) {
+      final args = routeData.argsAs<RegisterFormRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const RegisterScreen(),
+        child: RegisterFormScreen(
+          key: args.key,
+          uid: args.uid,
+          phoneNumber: args.phoneNumber,
+        ),
+      );
+    },
+    RegisterRoute.name: (routeData) {
+      final args = routeData.argsAs<RegisterRouteArgs>(
+          orElse: () => const RegisterRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: RegisterScreen(key: args.key),
       );
     },
   };
@@ -110,16 +129,30 @@ class InformationRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [LoginScreen]
-class LoginRoute extends PageRouteInfo<void> {
-  const LoginRoute({List<PageRouteInfo>? children})
-      : super(
+class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
+  LoginRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
           LoginRoute.name,
+          args: LoginRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'LoginRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<LoginRouteArgs> page = PageInfo<LoginRouteArgs>(name);
+}
+
+class LoginRouteArgs {
+  const LoginRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'LoginRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -138,16 +171,40 @@ class MapRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [OtpVerificationScreen]
-class OtpVerificationRoute extends PageRouteInfo<void> {
-  const OtpVerificationRoute({List<PageRouteInfo>? children})
-      : super(
+class OtpVerificationRoute extends PageRouteInfo<OtpVerificationRouteArgs> {
+  OtpVerificationRoute({
+    Key? key,
+    required String phoneNumber,
+    List<PageRouteInfo>? children,
+  }) : super(
           OtpVerificationRoute.name,
+          args: OtpVerificationRouteArgs(
+            key: key,
+            phoneNumber: phoneNumber,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'OtpVerificationRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<OtpVerificationRouteArgs> page =
+      PageInfo<OtpVerificationRouteArgs>(name);
+}
+
+class OtpVerificationRouteArgs {
+  const OtpVerificationRouteArgs({
+    this.key,
+    required this.phoneNumber,
+  });
+
+  final Key? key;
+
+  final String phoneNumber;
+
+  @override
+  String toString() {
+    return 'OtpVerificationRouteArgs{key: $key, phoneNumber: $phoneNumber}';
+  }
 }
 
 /// generated route for
@@ -165,15 +222,73 @@ class ProfileRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [RegisterFormScreen]
+class RegisterFormRoute extends PageRouteInfo<RegisterFormRouteArgs> {
+  RegisterFormRoute({
+    Key? key,
+    required String uid,
+    required String phoneNumber,
+    List<PageRouteInfo>? children,
+  }) : super(
+          RegisterFormRoute.name,
+          args: RegisterFormRouteArgs(
+            key: key,
+            uid: uid,
+            phoneNumber: phoneNumber,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'RegisterFormRoute';
+
+  static const PageInfo<RegisterFormRouteArgs> page =
+      PageInfo<RegisterFormRouteArgs>(name);
+}
+
+class RegisterFormRouteArgs {
+  const RegisterFormRouteArgs({
+    this.key,
+    required this.uid,
+    required this.phoneNumber,
+  });
+
+  final Key? key;
+
+  final String uid;
+
+  final String phoneNumber;
+
+  @override
+  String toString() {
+    return 'RegisterFormRouteArgs{key: $key, uid: $uid, phoneNumber: $phoneNumber}';
+  }
+}
+
+/// generated route for
 /// [RegisterScreen]
-class RegisterRoute extends PageRouteInfo<void> {
-  const RegisterRoute({List<PageRouteInfo>? children})
-      : super(
+class RegisterRoute extends PageRouteInfo<RegisterRouteArgs> {
+  RegisterRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
           RegisterRoute.name,
+          args: RegisterRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'RegisterRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<RegisterRouteArgs> page =
+      PageInfo<RegisterRouteArgs>(name);
+}
+
+class RegisterRouteArgs {
+  const RegisterRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'RegisterRouteArgs{key: $key}';
+  }
 }

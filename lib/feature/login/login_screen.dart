@@ -1,19 +1,25 @@
+import 'package:anidopt/config/router/app_router.dart';
 import 'package:anidopt/ui/color.dart';
 import 'package:anidopt/ui/dimen.dart';
 import 'package:anidopt/ui/type.dart';
 import 'package:anidopt/utility/extensions/build_context_extensions.dart';
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 
 @RoutePage()
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({Key? key}) : super(key: key);
+
+
+  final TextEditingController _phoneNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return _buildMainView(context);
   }
+
 
   Widget _buildMainView(BuildContext context){
     return Scaffold(
@@ -32,11 +38,12 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   Text("Selamat Datang di\nAnidopt",style: lBold,),
                   SizedBox(height: spacing2,),
-                  Text("Masukkan nomor telepon anda untuk dapat login atau mendaftarkan akun anda",style: xsRegular,),
+                  Text("Masukkan nomor telepon anda untuk dapat login",style: xsRegular,),
                   SizedBox(height: spacing9,),
                   Text("Nomor Telepon",style: smBold,),
                   SizedBox(height: spacing3,),
                   TextField(
+                    controller: _phoneNumberController,
                     style: smBold,
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
@@ -56,13 +63,21 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: spacing9,),
                   SizedBox(
                     width: double.infinity,
-                      child: OutlinedButton(onPressed: (){}, child: Text("Login"))),
-                  SizedBox(height: spacing4,),
+                      child: OutlinedButton(onPressed: (){
+                        if(_phoneNumberController.text.length < 8){
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Silahkan masukan nomor telepon yang valid")));
+                        } else{
+                          context.router.push(OtpVerificationRoute(phoneNumber: "+62${_phoneNumberController.text}"));
+                        }
+                      }, child: Text("Login"))),
+                  SizedBox(height: spacing5,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Tidak memiliki akun? ",style: xsRegular,),
-                      TextButton(onPressed: (){}, child: Text("Daftar Sekarang"))
+                      TextButton(onPressed: (){
+                        context.router.push(RegisterRoute());
+                      }, child: Text("Daftar Sekarang"))
                     ],
                   )
 

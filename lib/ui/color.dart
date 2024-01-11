@@ -75,6 +75,9 @@ const Color dividerColor = Color(0xFF2C2C2C);
 const Color shimmerColor = gray10Color;
 const Color shimmerHighlightColor = gray9Color;
 
+const Color whiteColor = Color(0xFFFFFFFF);
+
+
 const Gradient linear8Gradient = LinearGradient(
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,

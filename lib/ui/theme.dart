@@ -125,12 +125,12 @@ class AppTheme {
 
    static const AppBarTheme _appBarTheme = AppBarTheme(
        iconTheme: IconThemeData(
-         color: gray1Color, //change your color here
+         color: textColor, //change your color here
        ),
        backgroundColor: backgroundColor,
        elevation: 0,
        titleTextStyle: smMedium,
-       centerTitle: true,
+       centerTitle: false,
        scrolledUnderElevation: 0
    );
 

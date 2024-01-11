@@ -29,9 +29,19 @@ class CacheStore {
 
   }
 
+  bool get isLogin {
+    return _getStorage.read<bool?>('login') ?? true;
+  }
+
+  set isLogin(bool login) {
+    _getStorage.write('login', login);
+
+  }
+
   bool get first {
     return _getStorage.read<bool?>('first') ?? true;
   }
+
 
   set user(UserModel user) {
     _getStorage.write('user', user.toJson());

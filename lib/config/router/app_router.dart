@@ -1,6 +1,7 @@
 import 'package:anidopt/feature/login/login_screen.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 
 import '../../feature/home/feed/feed_screen.dart';
 import '../../feature/home/home_navigation_screen.dart';
@@ -8,6 +9,7 @@ import '../../feature/home/information/information_screen.dart';
 import '../../feature/home/map/map_screen.dart';
 import '../../feature/home/profile/profile_screen.dart';
 import '../../feature/otp_verification/otp_verification_screen.dart';
+import '../../feature/register/register_form/register_form_screen.dart';
 import '../../feature/register/register_screen.dart';
 import 'guards/initiate_route_guards.dart';
 
@@ -23,6 +25,9 @@ class AppRouter extends _$AppRouter {
             guards: [InitialRouteGuards()]),
         AutoRoute(
           page: RegisterRoute.page,
+        ),
+        AutoRoute(
+          page: RegisterFormRoute.page,
         ),
         AutoRoute(
           page: OtpVerificationRoute.page,
