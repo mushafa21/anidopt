@@ -23,17 +23,17 @@ import '../../../../utility/picker/location_picker.dart';
 import '../../../widgets/circle_image_view.dart';
 import '../../../widgets/image_type_sheet.dart';
 
-class CreatePostOpenAdopt extends StatefulWidget {
+class CreatePostFound extends StatefulWidget {
   final Function(PostModel, File) onCreateButtonClicked;
 
-  const CreatePostOpenAdopt({Key? key, required this.onCreateButtonClicked})
+  const CreatePostFound({Key? key, required this.onCreateButtonClicked})
       : super(key: key);
 
   @override
-  State<CreatePostOpenAdopt> createState() => _CreatePostOpenAdoptState();
+  State<CreatePostFound> createState() => _CreatePostFoundState();
 }
 
-class _CreatePostOpenAdoptState extends State<CreatePostOpenAdopt> {
+class _CreatePostFoundState extends State<CreatePostFound> {
   final _formKey = GlobalKey<FormState>();
   File? imageFile;
   final TextEditingController _nameController = TextEditingController();
@@ -128,9 +128,9 @@ class _CreatePostOpenAdoptState extends State<CreatePostOpenAdopt> {
                         padding: EdgeInsets.symmetric(horizontal: spacing3,vertical: spacing1),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(radiusXl),
-                          color: errorColor,
+                          color: secondaryColor,
                         ),
-                        child: Text("Hilang",style: xsMedium.copyWith(color: whiteColor),),
+                        child: Text("Ditemukan",style: xsMedium.copyWith(color: whiteColor),),
                       )
                     ],
                   ),
@@ -219,7 +219,7 @@ class _CreatePostOpenAdoptState extends State<CreatePostOpenAdopt> {
               ),
 
               SizedBox(height: spacing5,),
-              Text("Lokasi Hewan",style: xsRegular,),
+              Text("Lokasi Hewan Ditemukan",style: xsRegular,),
               SizedBox(height: spacing3,),
               GestureDetector(
                 onTap: () {
@@ -273,7 +273,7 @@ class _CreatePostOpenAdoptState extends State<CreatePostOpenAdopt> {
                               ..latitude = latitude
                               ..longitude = longitude
                               ..address = address
-                              ..type = PostType.openAdopt.value,
+                              ..type = PostType.found.value,
                             imageFile!);
                       }
                     },

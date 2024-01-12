@@ -2,7 +2,6 @@ import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-
 import '../../model/post_model.dart';
 import '../../presentation/home/feed/feed_screen.dart';
 import '../../presentation/home/home_navigation_screen.dart';
@@ -25,13 +24,13 @@ part 'app_router.gr.dart';
 class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(
-        page: OnboardingRoute.page,
-        initial: true,
-        guards: [InitialRouteGuards()]),
         AutoRoute(
-            page: LoginRoute.page,
-          ),
+            page: OnboardingRoute.page,
+            initial: true,
+            guards: [InitialRouteGuards()]),
+        AutoRoute(
+          page: LoginRoute.page,
+        ),
         AutoRoute(
           page: RegisterRoute.page,
         ),
@@ -42,9 +41,7 @@ class AppRouter extends _$AppRouter {
           page: OtpVerificationRoute.page,
         ),
         AutoRoute(page: HomeNavigationRoute.page, children: [
-          AutoRoute(
-            page: FeedRoute.page, initial: true
-          ),
+          AutoRoute(page: FeedRoute.page, initial: true),
           AutoRoute(
             page: MapRoute.page,
           ),
@@ -55,9 +52,12 @@ class AppRouter extends _$AppRouter {
             page: ProfileRoute.page,
           ),
         ]),
-    AutoRoute(
-      page: CreatePostRoute.page,
-    ),
+        AutoRoute(
+          page: CreatePostRoute.page,
+        ),
+        AutoRoute(
+          page: PostDetailRoute.page,
+        ),
       ];
 }
 

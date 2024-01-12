@@ -10,10 +10,17 @@ class PostDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return _buildMainView(context);
   }
 
-  Widget _mainView(BuildContext context){
-    return Scaffold();
+  Widget _buildMainView(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(),
+    );
   }
+
+
+
+
+
 }

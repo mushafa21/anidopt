@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 
 /// Check https://m3.material.io/theme-builder#/custom for refrences
 
-const Color primaryColor = Color(0xFF5F03A8);
+const Color primaryColor = Color(0xFF8000FF);
 // const Color primaryColor = Color(0xFFF0C777);
 
 const Color primaryTextColor = Color(0xFFF0C777);
@@ -18,7 +18,7 @@ const Color onPrimaryColor = Color(0xFFFFFFFF);
 const Color primaryContainerColor = Color(0xFFfaf5fe);
 const Color onPrimaryContainerColor = Color(0xFF21005D);
 
-const Color secondaryColor = Color(0xFF625B71);
+const Color secondaryColor = Color(0xFFFECB00);
 const Color onSecondaryColor = Color(0xFFFFFFFF);
 const Color secondaryContainerColor = Color(0xFFE8DEF8);
 const Color onSecondaryContainerColor = Color(0xFF1D192B);

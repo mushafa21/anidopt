@@ -23,17 +23,17 @@ import '../../../../utility/picker/location_picker.dart';
 import '../../../widgets/circle_image_view.dart';
 import '../../../widgets/image_type_sheet.dart';
 
-class CreatePostOpenAdopt extends StatefulWidget {
+class CreatePostMissing extends StatefulWidget {
   final Function(PostModel, File) onCreateButtonClicked;
 
-  const CreatePostOpenAdopt({Key? key, required this.onCreateButtonClicked})
+  const CreatePostMissing({Key? key, required this.onCreateButtonClicked})
       : super(key: key);
 
   @override
-  State<CreatePostOpenAdopt> createState() => _CreatePostOpenAdoptState();
+  State<CreatePostMissing> createState() => _CreatePostMissingState();
 }
 
-class _CreatePostOpenAdoptState extends State<CreatePostOpenAdopt> {
+class _CreatePostMissingState extends State<CreatePostMissing> {
   final _formKey = GlobalKey<FormState>();
   File? imageFile;
   final TextEditingController _nameController = TextEditingController();
@@ -219,7 +219,7 @@ class _CreatePostOpenAdoptState extends State<CreatePostOpenAdopt> {
               ),
 
               SizedBox(height: spacing5,),
-              Text("Lokasi Hewan",style: xsRegular,),
+              Text("Lokasi Hewan Terakhir Kali Dilihat",style: xsRegular,),
               SizedBox(height: spacing3,),
               GestureDetector(
                 onTap: () {
@@ -273,7 +273,7 @@ class _CreatePostOpenAdoptState extends State<CreatePostOpenAdopt> {
                               ..latitude = latitude
                               ..longitude = longitude
                               ..address = address
-                              ..type = PostType.openAdopt.value,
+                              ..type = PostType.missing.value,
                             imageFile!);
                       }
                     },

@@ -92,6 +92,30 @@ class FeedTypeSheet extends StatelessWidget {
               ),
             ),
           ),
+          GestureDetector(
+            onTap: ()  {
+              Navigator.pop(context);
+              context.router.push(CreatePostRoute(postType: PostType.found));
+            },
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: spacing5, vertical: spacing3),
+              child: Row(
+                children: [
+                  FaIcon(FontAwesomeIcons.paw,size: 16,),
+                  SizedBox(
+                    width: spacing3,
+                  ),
+                  Expanded(
+                    child: Text(
+                      "Ditemukan",
+                      style: sRegular,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+
 
 
         ],
