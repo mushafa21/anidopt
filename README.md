@@ -5,25 +5,25 @@ Hey everyone we are Impacta and we are ready to make an impact! Anidopt adalah A
 ## Demo
 
 ### Login
-![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_login.png)
+![Model](https://github.com/mushafa21/anidopt/blob/main/screenshot/img_screenshot_login.png)
 
 ### Register
-![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_register.png)
+![Model](https://github.com/mushafa21/anidopt/blob/main/screenshot/img_screenshot_register.png)
 
 ### Register Form
-![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_register_form.png)
+![Model](https://github.com/mushafa21/anidopt/blob/main/screenshot/img_screenshot_register_form.png)
 
 ### Feed
-![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_feed.png)
+![Model](https://github.com/mushafa21/anidopt/blob/main/screenshot/img_screenshot_feed.png)
 
 ### Create Post
-![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_create_post.png)
+![Model](https://github.com/mushafa21/anidopt/blob/main/screenshot/img_screenshot_create_post.png)
 
 ### Post Detail
-![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_create_post.png)
+![Model](https://github.com/mushafa21/anidopt/blob/main/screenshot/img_screenshot_create_post.png)
 
 ### Maps
-![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_maps.png)
+![Model](https://github.com/mushafa21/anidopt/blob/main/screenshot/img_screenshot_maps.png)
 
 ### Information
-![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_information.png)
+![Model](https://github.com/mushafa21/anidopt/blob/main/screenshot/img_screenshot_information.png)
