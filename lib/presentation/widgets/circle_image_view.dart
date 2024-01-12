@@ -24,11 +24,11 @@ class CircleImageView extends StatelessWidget {
     switch(imageType){
       case ImageType.network : return ClipOval(
         child: SizedBox.fromSize(size: Size.fromRadius(radius),
-        child: CachedNetworkImage(imageUrl: url ?? "", memCacheHeight: 400,placeholder: (context,url)=> const Center(child: CircularProgressIndicator()), errorWidget: (context,url,error)=> Image.asset(imageAsset ?? "assets/images/img_profil_default.jpg",fit: fit,),fit: fit,),
+        child: CachedNetworkImage(imageUrl: url ?? "", memCacheHeight: 400,placeholder: (context,url)=> const Center(child: CircularProgressIndicator()), errorWidget: (context,url,error)=> Image.asset(imageAsset ?? "assets/images/img_empty_avatar.png",fit: fit,),fit: fit,),
         ));
       case ImageType.asset : return  ClipOval(
         child: SizedBox.fromSize(size: Size.fromRadius(radius),
-        child: Image.asset(imageAsset ?? "assets/images/img_null.png",fit: fit,),
+        child: Image.asset(imageAsset ?? "assets/images/img_empty_avatar.png",fit: fit,),
       ));
       case ImageType.file : return ClipOval(
     child: SizedBox.fromSize(size: Size.fromRadius(radius),

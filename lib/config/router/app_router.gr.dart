@@ -28,7 +28,7 @@ abstract class _$AppRouter extends RootStackRouter {
     FeedRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const FeedScreen(),
+        child: FeedScreen(),
       );
     },
     HomeNavigationRoute.name: (routeData) {

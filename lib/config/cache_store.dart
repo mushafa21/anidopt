@@ -30,7 +30,7 @@ class CacheStore {
   }
 
   bool get isLogin {
-    return _getStorage.read<bool?>('login') ?? true;
+    return _getStorage.read<bool?>('login') ?? false;
   }
 
   set isLogin(bool login) {

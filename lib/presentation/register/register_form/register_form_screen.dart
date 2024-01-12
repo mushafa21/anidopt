@@ -229,7 +229,6 @@ class _RegisterFormState extends State<RegisterForm> {
                 child: OutlinedButton(
                     onPressed: () {
                       print(_formKey.currentState?.validate());
-                      print("click");
                       if (_formKey.currentState?.validate() == true) {
                         widget.onSubmitted(UserModel()..name = _nameController.text ..latitude = latitude ..longitude = longitude ..address = address ..uid = widget.uid ..phone = widget.phone);
                       }
