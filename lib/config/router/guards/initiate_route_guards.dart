@@ -12,17 +12,12 @@ class InitialRouteGuards extends AutoRouteGuard{
 
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) {
-    if (kDebugMode) {
-      print("OnBoardingGuards token ${_cacheStore.token}");
-    }
-    resolver.next(true);
     if (_cacheStore.isLogin) {
       router.push(HomeNavigationRoute());
     } else if(!_cacheStore.first){
       router.push(LoginRoute());
     } else{
       resolver.next(true);
-
     }
   }
 

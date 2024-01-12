@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:anidopt/config/cache_store.dart';
+import 'package:anidopt/config/locator.dart';
 import 'package:anidopt/model/post_model.dart';
 import 'package:anidopt/repository/post_repository.dart';
 import 'package:bloc/bloc.dart';
@@ -27,6 +29,7 @@ class CreatePostCubit extends Cubit<CreatePostState> {
       if(imageUrl != null){
         postModel.uid = FirebaseAuth.instance.currentUser?.uid ?? "";
         postModel.imageUrl = imageUrl;
+        postModel.contact = locator.get<CacheStore>().user.phone;
         await _postRepository.addPost(postModel);
         emit(CreatePostStateSuccess());
       } else{

@@ -76,6 +76,7 @@ const Color shimmerColor = gray10Color;
 const Color shimmerHighlightColor = gray9Color;
 
 const Color whiteColor = Color(0xFFFFFFFF);
+const Color blackColor = Color(0xFF000000);
 
 
 const Gradient linear8Gradient = LinearGradient(

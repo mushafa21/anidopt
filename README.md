@@ -1,16 +1,29 @@
-# anidopt
+# Anidopt
 
-A new Flutter project.
+Hey everyone we are Impacta and we are ready to make an impact! Anidopt adalah Aplikasi berbasis mobile yang menyediakan platform untuk adopsi dan pencarian hewan peliharaan. Pengguna dapat mengupload detail hewan peliharaannya atau hewan terlantar yang ingin diserahkan untuk diadopsi oleh pengguna lain. Pengguna juga dapat memposting ke platfrom kami terkait informasi hewan peliharaannya yang hilang Aplikasi ini juga terdapat informasi-informasi terkait hewan peliharaan seperti lokasi shelter dan dokter hewan terdekat, penangan pertama pada hewan, dll. Aplikasi ini bertujuan untuk memberikan solusi agar hewan-hewan peliharaan terutama yang terlantarkan dapat hidup dengan layak sesuai dengan tujuan United Nation SDGs nomor 15 yaitu Life On Land
 
-## Getting Started
+## Demo
 
-This project is a starting point for a Flutter application.
+### Login
+![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_login.png)
 
-A few resources to get you started if this is your first Flutter project:
+### Register
+![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_register.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Register Form
+![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_register_form.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Feed
+![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_feed.png)
+
+### Create Post
+![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_create_post.png)
+
+### Post Detail
+![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_create_post.png)
+
+### Maps
+![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_maps.png)
+
+### Information
+![Model](https://github.com/mushafa21/anidopt/screenshot/img_screenshot_information.png)

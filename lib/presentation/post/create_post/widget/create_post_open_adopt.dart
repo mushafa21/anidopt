@@ -128,9 +128,9 @@ class _CreatePostOpenAdoptState extends State<CreatePostOpenAdopt> {
                         padding: EdgeInsets.symmetric(horizontal: spacing3,vertical: spacing1),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(radiusXl),
-                          color: errorColor,
+                          color: successColor,
                         ),
-                        child: Text("Hilang",style: xsMedium.copyWith(color: whiteColor),),
+                        child: Text("Open Adopt",style: xsMedium.copyWith(color: whiteColor),),
                       )
                     ],
                   ),

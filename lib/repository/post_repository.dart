@@ -20,6 +20,8 @@ class PostRepository{
     }
   }
 
+
+
   addPost(PostModel postModel) async{
     try{
       await _firestore.collection(postCollection).add(postModel.toJson());
