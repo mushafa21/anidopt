@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
       /**
        * Settings Route
        */
+      debugShowCheckedModeBanner: false,
       routerDelegate: appRouter.delegate(),
       routeInformationParser: appRouter.defaultRouteParser(),
       /**

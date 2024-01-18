@@ -88,6 +88,7 @@ class FeedScreen extends StatelessWidget {
       }).toList();
       return ListView.builder(
           shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
           itemCount: listPost.length,
           itemBuilder: (context, index) {
             return PostItem(postModel: listPost[index]);
