@@ -17,8 +17,11 @@ import '../../presentation/post/create_post/create_post_screen.dart';
 import '../../presentation/post/post_detail/post_detail_screen.dart';
 import '../../presentation/register/register_form/register_form_screen.dart';
 import '../../presentation/register/register_screen.dart';
-import '../../report/create_report/create_report_screen.dart';
-import '../../report/report_list/report_list_screen.dart';
+import '../../presentation/report/create_report/create_report_screen.dart';
+import '../../presentation/report/report_list/report_list_screen.dart';
+import '../../presentation/verification/select_new_owner/select_new_owner_screen.dart';
+import '../../presentation/verification/user_terms/user_terms_screen.dart';
+import '../../presentation/verification/user_verification/user_verification_screen.dart';
 import '../enum/post_type.dart';
 import 'guards/initiate_route_guards.dart';
 
@@ -75,7 +78,16 @@ class AppRouter extends _$AppRouter {
     AutoRoute(
       page: CreateReportRoute.page,
     ),
-      ];
+    AutoRoute(
+      page: UserVerificationRoute.page,
+    ),
+    AutoRoute(
+      page: UserTermsRoute.page,
+    ),
+    AutoRoute(
+      page: SelectNewOwnerRoute.page,
+    ),
+  ];
 }
 
 final appRouter = AppRouter();

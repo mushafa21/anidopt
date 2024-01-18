@@ -1,15 +1,19 @@
+import 'package:anidopt/config/cache_store.dart';
 import 'package:anidopt/config/enum/post_type.dart';
+import 'package:anidopt/config/router/app_router.dart';
 import 'package:anidopt/model/post_model.dart';
 import 'package:anidopt/presentation/widgets/network_image_view.dart';
 import 'package:anidopt/ui/color.dart';
 import 'package:anidopt/ui/type.dart';
 import 'package:anidopt/utility/extensions/build_context_extensions.dart';
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../config/locator.dart';
 import '../../../ui/dimen.dart';
 
 
@@ -96,9 +100,10 @@ class PostDetailScreen extends StatelessWidget {
 
 
                   Center(
-                    child: OutlinedButton(onPressed: (){
-                      _launchCaller();
-                    
+                    child: postModel.uid == locator.get<CacheStore>().user.uid ?  ElevatedButton(onPressed: (){
+                      context.router.push(SelectNewOwnerRoute());
+                    }, child: Text("Selesaikan"))  :OutlinedButton(onPressed: (){
+                      context.router.push(UserVerificationRoute());
                     }, child: Text("Hubungi Pemilik")),
                   )
 

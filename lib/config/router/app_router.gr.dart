@@ -147,6 +147,24 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ReportListScreen(),
       );
     },
+    SelectNewOwnerRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SelectNewOwnerScreen(),
+      );
+    },
+    UserTermsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const UserTermsScreen(),
+      );
+    },
+    UserVerificationRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const UserVerificationScreen(),
+      );
+    },
   };
 }
 
@@ -597,6 +615,48 @@ class ReportListRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'ReportListRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SelectNewOwnerScreen]
+class SelectNewOwnerRoute extends PageRouteInfo<void> {
+  const SelectNewOwnerRoute({List<PageRouteInfo>? children})
+      : super(
+          SelectNewOwnerRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SelectNewOwnerRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [UserTermsScreen]
+class UserTermsRoute extends PageRouteInfo<void> {
+  const UserTermsRoute({List<PageRouteInfo>? children})
+      : super(
+          UserTermsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'UserTermsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [UserVerificationScreen]
+class UserVerificationRoute extends PageRouteInfo<void> {
+  const UserVerificationRoute({List<PageRouteInfo>? children})
+      : super(
+          UserVerificationRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'UserVerificationRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

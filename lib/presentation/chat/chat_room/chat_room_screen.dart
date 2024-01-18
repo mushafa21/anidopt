@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:anidopt/utility/extensions/build_context_extensions.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../../ui/color.dart';
 import '../../../ui/dimen.dart';
@@ -12,9 +15,30 @@ import '../widget/item_chat_bubble.dart';
 
 
 @RoutePage()
-class ChatRoomScreen extends StatelessWidget {
+class ChatRoomScreen extends StatefulWidget {
   ChatRoomScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ChatRoomScreen> createState() => _ChatRoomScreenState();
+}
+
+class _ChatRoomScreenState extends State<ChatRoomScreen> {
   bool isMine = true;
+  late Timer timer;
+  final TextEditingController _chatController = TextEditingController();
+  List<Widget> chats = [];
+
+  addChat(Widget widget){
+    chats.add(widget);
+    _chatController.clear();
+    setState(() {
+    });
+    timer = Timer(Duration(seconds: 2), () {
+      chats.add(ItemChatBubble(isMine: false, message: "kondisinya sehat kak"));
+      setState(() {
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,27 +93,28 @@ class ChatRoomScreen extends StatelessWidget {
   }
 
   Widget _itemChatByDate(BuildContext context) {
-    return ListView.builder(
-      reverse: true,
-      itemCount: 100,
-      itemBuilder: (context, index) {
-        isMine = !isMine;
-        return             ItemChatBubble(isMine: isMine, message: 'halo gan',);
-      },
-      physics: AlwaysScrollableScrollPhysics(),
+    return SingleChildScrollView(
+      child: Column(
+        children: chats,
+      ),
     );
   }
 
   Widget _messageBar() {
     return TextField(
-      onSubmitted: (value) {},
+      textInputAction: TextInputAction.newline,
+      controller: _chatController,
+      minLines: 1,
+      maxLines: 5,
       decoration: InputDecoration(
         fillColor: primaryContainerColor,
         filled: true,
         suffixIcon: Padding(
           padding: EdgeInsets.symmetric(horizontal: spacing4),
           child: IconButton(
-            onPressed: null,
+            onPressed: (){
+              addChat(ItemChatBubble(isMine: true, message: _chatController.text));
+            },
             icon: SvgPicture.asset(
               "assets/images/ic_send_comment.svg",
               width: 16,
@@ -107,5 +132,4 @@ class ChatRoomScreen extends StatelessWidget {
       ),
     );
   }
-
 }

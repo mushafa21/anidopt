@@ -5,8 +5,8 @@ import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../presentation/widgets/network_image_view.dart';
-import '../../ui/type.dart';
+import '../../../ui/type.dart';
+import '../../widgets/network_image_view.dart';
 
 
 @RoutePage()
