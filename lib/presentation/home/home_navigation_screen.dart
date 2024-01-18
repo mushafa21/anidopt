@@ -21,6 +21,7 @@ class HomeNavigationScreen extends StatelessWidget {
       routes: [
         FeedRoute(),
         MapRoute(),
+        ChatRoute(),
         InformationRoute(),
         ProfileRoute(),
       ],
@@ -67,6 +68,19 @@ class HomeNavigationScreen extends StatelessWidget {
                 color: gray6Color,
               ),
               label: 'Peta',
+            ),
+            BottomNavigationBarItem(
+              activeIcon: SvgPicture.asset(
+                "assets/images/ic_navigation_chat.svg",
+                width: 24,
+                height: 24,
+                // color: primary70Color,
+              ),
+              icon: SvgPicture.asset("assets/images/ic_navigation_chat.svg",
+                width: 24, height: 24,
+                color: gray6Color,
+              ),
+              label: 'Chat',
             ),
             BottomNavigationBarItem(
               activeIcon: SvgPicture.asset(

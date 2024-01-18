@@ -3,6 +3,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../model/post_model.dart';
+import '../../presentation/chat/chat_room/chat_room_screen.dart';
+import '../../presentation/home/chat/chat_screen.dart';
 import '../../presentation/home/feed/feed_screen.dart';
 import '../../presentation/home/home_navigation_screen.dart';
 import '../../presentation/home/information/information_screen.dart';
@@ -15,6 +17,8 @@ import '../../presentation/post/create_post/create_post_screen.dart';
 import '../../presentation/post/post_detail/post_detail_screen.dart';
 import '../../presentation/register/register_form/register_form_screen.dart';
 import '../../presentation/register/register_screen.dart';
+import '../../report/create_report/create_report_screen.dart';
+import '../../report/report_list/report_list_screen.dart';
 import '../enum/post_type.dart';
 import 'guards/initiate_route_guards.dart';
 
@@ -46,8 +50,12 @@ class AppRouter extends _$AppRouter {
             page: MapRoute.page,
           ),
           AutoRoute(
+            page: ChatRoute.page,
+          ),
+          AutoRoute(
             page: InformationRoute.page,
           ),
+
           AutoRoute(
             page: ProfileRoute.page,
           ),
@@ -58,6 +66,15 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
           page: PostDetailRoute.page,
         ),
+    AutoRoute(
+      page: ChatRoomRoute.page,
+    ),
+    AutoRoute(
+      page: ReportListRoute.page,
+    ),
+    AutoRoute(
+      page: CreateReportRoute.page,
+    ),
       ];
 }
 

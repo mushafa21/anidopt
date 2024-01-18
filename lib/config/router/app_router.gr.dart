@@ -15,6 +15,22 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    ChatRoomRoute.name: (routeData) {
+      final args = routeData.argsAs<ChatRoomRouteArgs>(
+          orElse: () => const ChatRoomRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ChatRoomScreen(key: args.key),
+      );
+    },
+    ChatRoute.name: (routeData) {
+      final args =
+          routeData.argsAs<ChatRouteArgs>(orElse: () => const ChatRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ChatScreen(key: args.key),
+      );
+    },
     CreatePostRoute.name: (routeData) {
       final args = routeData.argsAs<CreatePostRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -25,10 +41,20 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
-    FeedRoute.name: (routeData) {
+    CreateReportRoute.name: (routeData) {
+      final args = routeData.argsAs<CreateReportRouteArgs>(
+          orElse: () => const CreateReportRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: FeedScreen(),
+        child: CreateReportScreen(key: args.key),
+      );
+    },
+    FeedRoute.name: (routeData) {
+      final args =
+          routeData.argsAs<FeedRouteArgs>(orElse: () => const FeedRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: FeedScreen(key: args.key),
       );
     },
     HomeNavigationRoute.name: (routeData) {
@@ -89,9 +115,11 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     ProfileRoute.name: (routeData) {
+      final args = routeData.argsAs<ProfileRouteArgs>(
+          orElse: () => const ProfileRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child:  ProfileScreen(),
+        child: ProfileScreen(key: args.key),
       );
     },
     RegisterFormRoute.name: (routeData) {
@@ -113,7 +141,70 @@ abstract class _$AppRouter extends RootStackRouter {
         child: RegisterScreen(key: args.key),
       );
     },
+    ReportListRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ReportListScreen(),
+      );
+    },
   };
+}
+
+/// generated route for
+/// [ChatRoomScreen]
+class ChatRoomRoute extends PageRouteInfo<ChatRoomRouteArgs> {
+  ChatRoomRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ChatRoomRoute.name,
+          args: ChatRoomRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'ChatRoomRoute';
+
+  static const PageInfo<ChatRoomRouteArgs> page =
+      PageInfo<ChatRoomRouteArgs>(name);
+}
+
+class ChatRoomRouteArgs {
+  const ChatRoomRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'ChatRoomRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
+/// [ChatScreen]
+class ChatRoute extends PageRouteInfo<ChatRouteArgs> {
+  ChatRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ChatRoute.name,
+          args: ChatRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'ChatRoute';
+
+  static const PageInfo<ChatRouteArgs> page = PageInfo<ChatRouteArgs>(name);
+}
+
+class ChatRouteArgs {
+  const ChatRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'ChatRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -155,17 +246,60 @@ class CreatePostRouteArgs {
 }
 
 /// generated route for
+/// [CreateReportScreen]
+class CreateReportRoute extends PageRouteInfo<CreateReportRouteArgs> {
+  CreateReportRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          CreateReportRoute.name,
+          args: CreateReportRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'CreateReportRoute';
+
+  static const PageInfo<CreateReportRouteArgs> page =
+      PageInfo<CreateReportRouteArgs>(name);
+}
+
+class CreateReportRouteArgs {
+  const CreateReportRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'CreateReportRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
 /// [FeedScreen]
-class FeedRoute extends PageRouteInfo<void> {
-  const FeedRoute({List<PageRouteInfo>? children})
-      : super(
+class FeedRoute extends PageRouteInfo<FeedRouteArgs> {
+  FeedRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
           FeedRoute.name,
+          args: FeedRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'FeedRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<FeedRouteArgs> page = PageInfo<FeedRouteArgs>(name);
+}
+
+class FeedRouteArgs {
+  const FeedRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'FeedRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -354,16 +488,31 @@ class PostDetailRouteArgs {
 
 /// generated route for
 /// [ProfileScreen]
-class ProfileRoute extends PageRouteInfo<void> {
-  const ProfileRoute({List<PageRouteInfo>? children})
-      : super(
+class ProfileRoute extends PageRouteInfo<ProfileRouteArgs> {
+  ProfileRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
           ProfileRoute.name,
+          args: ProfileRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'ProfileRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<ProfileRouteArgs> page =
+      PageInfo<ProfileRouteArgs>(name);
+}
+
+class ProfileRouteArgs {
+  const ProfileRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'ProfileRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -436,4 +585,18 @@ class RegisterRouteArgs {
   String toString() {
     return 'RegisterRouteArgs{key: $key}';
   }
+}
+
+/// generated route for
+/// [ReportListScreen]
+class ReportListRoute extends PageRouteInfo<void> {
+  const ReportListRoute({List<PageRouteInfo>? children})
+      : super(
+          ReportListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ReportListRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
